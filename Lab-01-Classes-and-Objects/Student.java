@@ -10,6 +10,7 @@ public class Student {
 
     public static void main(String[] args) {
 
+       // EXPLAIN: The new keyword creates an object from the Student class.
         Student student1 = new Student();
 
         student1.name = "Tanatswa";
