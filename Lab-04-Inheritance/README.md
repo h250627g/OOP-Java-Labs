@@ -1,36 +1,28 @@
-# Lab 4: Inheritance
-
-## Student Information
-
-**Full Name:** Tanatswa Definite Muvezwa  
-**Registration Number:** H250627G  
-**Department:** Software Engineering 1.2
+# Lab 04 — Inheritance
 
 ## Objective
 
-To understand inheritance and how subclasses inherit properties and methods from a superclass in Java.
+To understand inheritance in Java by creating a parent class and a child class.
 
-## Exercises Completed
+## Selected Exercise
 
-1. Animal superclass
-2. Dog subclass
-3. Cat subclass
+### Basic — Person and Student
 
-## Concepts Demonstrated
-
-- Superclass and subclass
-- The `extends` keyword
-- The `super` keyword
-- Constructor inheritance
-- Inherited methods
-- Creating multiple subclasses
+Created a `Person` parent class containing `name` and `age`. Created a `Student` subclass that inherits from `Person` and adds a `course` field.
 
 ## Files
 
-- `Animal.java` – demonstrates the parent class.
-- `Dog.java` – demonstrates a subclass of `Animal`.
-- `Cat.java` – demonstrates another subclass of `Animal`.
+- `Person.java`
+- `Student.java`
+- `InheritanceDemo.java`
+
+## Concepts Demonstrated
+
+- Inheritance using `extends`
+- Parent constructors using `super`
+- Method overriding using `@Override`
+- Reusing inherited methods
 
 ## Conclusion
 
-This lab helped me understand how inheritance allows a class to reuse properties and methods from another class.
+This exercise demonstrates how a child class inherits data and behaviour from a parent class and can extend or override that behaviour.
