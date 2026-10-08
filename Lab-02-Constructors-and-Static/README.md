@@ -1,36 +1,54 @@
-# Lab 2: Constructors, this and static
-
-## Student Information
-
-**Full Name:** Tanatswa Definite Muvezwa  
-**Registration Number:** H250627G  
-**Department:** Software Engineering 1.2
+# Lab 02: Constructors, the this Keyword and static Members
 
 ## Objective
 
-To understand constructors, the `this` keyword, constructor overloading, and static members in Java.
+The objective of this lab is to understand constructors, constructor overloading, constructor chaining, the `this` keyword, static members, and static factory methods in Java.
 
-## Exercises Completed
+## Selected Exercises
 
-1. Student class using a parameterized constructor
-2. Counter class using a static variable
-3. Book class using constructor overloading
+### 1. Basic Exercise — Circle
 
-## Concepts Demonstrated
+Created a `Circle` class with:
+- A constructor that accepts a radius
+- A no-argument constructor that sets the radius to `1.0`
+- An `area()` method
 
-- Creating constructors
-- Parameterized constructors
-- Constructor overloading
-- Using the `this` keyword
-- Using static variables
-- Creating objects
+### 2. Intermediate Exercise — Employee
+
+Created an `Employee` class with:
+- An auto-incrementing employee ID using a static counter
+- Three overloaded constructors
+- A copy constructor
+- A `display()` method
+
+### 3. Challenge — Temperature
+
+Created a `Temperature` class with:
+- A private constructor
+- A static factory method `fromCelsius()`
+- A static factory method `fromFahrenheit()`
+- A getter for the Celsius temperature
+
+Static factory methods provide clear ways of creating objects from different types of input.
 
 ## Files
 
-- `Student.java` – demonstrates a parameterized constructor and the `this` keyword.
-- `Counter.java` – demonstrates a static variable shared by objects.
-- `Book.java` – demonstrates constructor overloading.
+- `Circle.java`
+- `Employee.java`
+- `Temperature.java`
+
+## Concepts Demonstrated
+
+- Constructors
+- Constructor overloading
+- Constructor chaining using `this(...)`
+- The `this` keyword
+- Static variables
+- Static methods
+- Copy constructors
+- Static factory methods
+- Private constructors
 
 ## Conclusion
 
-This lab helped me understand how constructors initialize objects and how static members are shared by objects of the same class.
+This lab provided practical experience with different types of constructors and demonstrated how static members are shared by objects of the same class. It also showed how constructor chaining and static factory methods can make object creation clearer and more organized.
