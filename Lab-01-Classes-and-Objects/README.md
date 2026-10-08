@@ -1,36 +1,54 @@
-# Lab 1: Classes and Objects
-
-## Student Information
-
-**Full Name:** Tanatswa Definite Muvezwa  
-**Registration Number:** H250627G  
-**Department:** Software Engineering 1.2
+# Lab 01: Classes and Objects
 
 ## Objective
 
-To understand the basic concepts of classes and objects in Java.
+The objective of this lab is to understand how to create classes and objects in Java and how objects can contain data and methods.
 
-## Exercises Completed
+## Selected Exercises
 
-1. Student class and object
-2. Book class and object
-3. Car class and object
+### 1. Basic Exercise — Car
 
-## Concepts Demonstrated
+Created a `Car` class with:
+- `brand`
+- `year`
+- `mileage`
+- `display()` method
 
-- Creating classes
-- Creating objects using `new`
-- Declaring fields
-- Assigning values to objects
-- Creating and calling methods
-- Using the `main()` method
+Three Car objects were created and their details were displayed.
+
+### 2. Intermediate Exercise — Rectangle
+
+Created a `Rectangle` class with:
+- `width`
+- `height`
+- `area()` method
+- `perimeter()` method
+
+An array of five rectangles was created, and the rectangle with the largest area was displayed.
+
+### 3. Challenge — Address and Person
+
+Created `Address` and `Person` classes.
+
+A `Person` object contains an `Address` object. The exercise demonstrates accessing the city using a chained dot expression and handling a `null` address.
 
 ## Files
 
-- `Student.java` – demonstrates a Student class and object.
-- `Book.java` – demonstrates a Book class and object.
-- `Car.java` – demonstrates a Car class and object.
+- `Car.java`
+- `Rectangle.java`
+- `Address.java`
+- `Person.java`
+
+## Concepts Demonstrated
+
+- Classes and objects
+- Fields and methods
+- Arrays of objects
+- Object references
+- Chained dot expressions
+- Null references
+- `NullPointerException` handling
 
 ## Conclusion
 
-This lab helped me understand how classes and objects are created and used in Java.
+This lab provided practical experience in creating and using Java classes and objects. It also demonstrated how objects can be related to one another through references.
