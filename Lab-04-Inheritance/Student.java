@@ -6,10 +6,4 @@ public class Student extends Person {
         super(name, age);
         this.course = course;
     }
-
-    @Override
-    void display() {
-        super.display();
-        System.out.println("Course: " + course);
-    }
 }
