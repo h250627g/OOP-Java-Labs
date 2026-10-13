@@ -1,33 +1,19 @@
-# Lab 8: Generics and Collections
 
-## Student Information
+# Lab 8: Collections and Generics
 
-**Full Name:** Tanatswa Definite Muvezwa  
-**Registration Number:** H250627G  
-**Department:** Software Engineering 1.2
+## 1. Basic Exercise — ArrayList
+**File:** `ArrayListDemo.java`
 
-## Objective
+Stores 10 integers in an ArrayList, calculates their sum and maximum value, and prints the list in reverse order.
 
-To understand generics and collections in Java.
+## 2. Intermediate Exercise — Word Frequency
+**File:** `WordFrequencyDemo.java`
 
-## Exercises Completed
+Reads a paragraph, counts the frequency of each word using a Map, and displays the words in descending order of frequency.
 
-1. Using a generic class
-2. Using an ArrayList
-3. Using a HashMap
+## 3. Challenge Exercise — Generic Bubble Sort
+**File:** `BubbleSortDemo.java`
 
-## Concepts Demonstrated
+Implements a generic bubble sort method using Comparable. Tests sorting with Integer and String arrays.
 
-- Generics
-- ArrayList
-- HashMap
-- Adding and accessing collection elements
-- Type safety
-
-## Files
-
-The Java files in this folder demonstrate the use of generics and Java collections.
-
-## Conclusion
-
-This lab helped me understand how generics provide type safety and how collections can be used to store and manage groups of objects.
+**Explanation:** The method cannot accept `int[]` because generics work with reference types rather than primitive types. `Integer[]` works because Integer is an object wrapper that implements Comparable.
