@@ -1,36 +1,25 @@
-# Lab 6: Abstraction
+# Lab 06 — Abstraction and Interfaces
 
-## Student Information
+## Basic — Flyable Interface
 
-**Full Name:** Tanatswa Definite Muvezwa  
-**Registration Number:** H250627G  
-**Department:** Software Engineering 1.2
+Created a `Flyable` interface with a `fly()` method. Implemented it in `Bird` and `Aeroplane`, demonstrating that unrelated classes can share an interface.
 
-## Objective
+**Files:** `Flyable.java`, `Bird.java`, `Aeroplane.java`, `FlyableDemo.java`
 
-To understand abstraction and the use of abstract classes and abstract methods in Java.
+## Intermediate — Comparable and Comparator
 
-## Exercises Completed
+Created a `Student` class implementing `Comparable<Student>` to sort students by name. Used a `Comparator<Student>` to sort students by marks in ascending order.
 
-1. Shape abstract class
-2. Circle class extending Shape
-3. Rectangle class extending Shape
+**Files:** `Student.java`, `StudentSortDemo.java`
 
-## Concepts Demonstrated
+## Challenge — Default Method Conflict
 
-- Abstract classes
-- Abstract methods
-- Concrete subclasses
-- Method overriding
-- Inheritance
-- Using abstract methods to define common behaviour
+Created two interfaces with conflicting default `hello()` methods. Resolved the conflict by overriding `hello()` and explicitly calling both implementations using `InterfaceA.super.hello()` and `InterfaceB.super.hello()`.
 
-## Files
-
-- `Shape.java` – demonstrates an abstract class and abstract method.
-- `Circle.java` – implements the `calculateArea()` method for a circle.
-- `Rectangle.java` – implements the `calculateArea()` method for a rectangle.
+**File:** `DefaultMethodDemo.java`
 
 ## Conclusion
 
-This lab helped me understand how abstraction hides implementation details and allows subclasses to provide their own implementations of abstract methods.
+This lab demonstrates interfaces, implementation, natural ordering, custom sorting, and resolving conflicting default methods in Java.
+
+
