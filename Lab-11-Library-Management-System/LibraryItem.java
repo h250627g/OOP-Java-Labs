@@ -1,15 +1,20 @@
 
-public abstract class LibraryItem {
+public abstract class LibraryItem implements Borrowable {
     private final String id;
     private final String title;
     private boolean available = true;
+    private Loan currentLoan;
 
     protected LibraryItem(String id, String title) {
         if (id == null || id.isBlank()) {
-            throw new IllegalArgumentException("Item ID cannot be empty.");
+            throw new IllegalArgumentException(
+                "Item ID cannot be empty."
+            );
         }
         if (title == null || title.isBlank()) {
-            throw new IllegalArgumentException("Title cannot be empty.");
+            throw new IllegalArgumentException(
+                "Title cannot be empty."
+            );
         }
 
         this.id = id;
@@ -32,6 +37,41 @@ public abstract class LibraryItem {
 
     void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    @Override
+    public void borrow(Member member)
+            throws ItemNotAvailableException,
+                   MemberLimitExceededException {
+        if (!available) {
+            throw new ItemNotAvailableException(
+                "This item is already borrowed."
+            );
+        }
+
+        if (member.activeLoanCount() >= 3) {
+            throw new MemberLimitExceededException(
+                "A member cannot have more than 3 active loans."
+            );
+        }
+
+        currentLoan = new Loan(this, member);
+        member.addLoan(currentLoan);
+        available = false;
+    }
+
+    @Override
+    public void giveBack() {
+        if (currentLoan == null || currentLoan.isReturned()) {
+            throw new IllegalStateException(
+                "This item has no active loan."
+            );
+        }
+
+        currentLoan.markReturned();
+        currentLoan.getMember().removeLoan(currentLoan);
+        available = true;
+        currentLoan = null;
     }
 
     @Override
