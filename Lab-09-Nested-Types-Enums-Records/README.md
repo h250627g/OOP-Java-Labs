@@ -1,34 +1,17 @@
-# Lab 9: Nested Types, Enums and Records
 
-## Student Information
+# Lab 9: Nested Types, Enums, Records and the Object Contract
 
-**Full Name:** Tanatswa Definite Muvezwa  
-**Registration Number:** H250627G  
-**Department:** Software Engineering 1.2
+## Basic Exercise: Student Record
+Created a Student record with name and age components. The program prints the record, compares two equal records using equals(), and accesses the student's name using the name() accessor.
 
-## Objective
+File: Student.java
 
-To understand nested types, enums and records in Java.
+## Intermediate Exercise: Custom Linked List
+Created a custom linked list with a private static nested Node class and an inner Iterator class. The list implements Iterable, allowing its elements to be accessed using a for-each loop.
 
-## Exercises Completed
+File: LinkedListDemo.java
 
-1. Nested class
-2. Enum
-3. Record
+## Challenge Exercise: Coin Enum
+Created a Coin enum with PENNY, NICKEL, DIME, and QUARTER values. Each coin stores its value in cents. The fewestCoins() method calculates the minimum number of coins needed for a given amount.
 
-## Concepts Demonstrated
-
-- Nested classes
-- Enums
-- Records
-- Creating and using custom data types
-
-## Files
-
-- `NestedClassExample.java` – demonstrates a nested class.
-- `Day.java` – demonstrates an enum.
-- `StudentRecord.java` – demonstrates a record.
-
-## Conclusion
-
-This lab helped me understand how nested classes, enums and records can be used to organize and represent data in Java.
+File: CoinDemo.java
