@@ -1,37 +1,25 @@
-# Lab 7: Exception Handling
+# Lab 07 — Exception Handling
 
-## Student Information
+## Basic — Division and Exception Handling
 
-**Full Name:** Tanatswa Definite Muvezwa  
-**Registration Number:** H250627G  
-**Department:** Software Engineering 1.2
+Created a program that reads two integers using `Scanner` and performs division. Handled non-numeric input using `InputMismatchException` and division by zero using `ArithmeticException`.
 
-## Objective
+**File:** `DivisionDemo.java`
 
-To understand how exceptions are handled in Java using try-catch and finally blocks.
+## Intermediate — Custom Exception
 
-## Exercises Completed
+Created `InsufficientFundsException` and modified `BankAccount.withdraw()` to throw the exception when the requested withdrawal exceeds the available balance.
 
-1. Handling division by zero
-2. Handling an array index error
-3. Handling invalid number input
+**Files:** `InsufficientFundsException.java`, `BankAccount.java`, `BankAccountDemo.java`
 
-## Concepts Demonstrated
+**Trade-offs:** Throwing an exception makes errors explicit and provides a detailed message, but requires additional exception-handling code. Returning `false` is simpler for expected failures but provides less information unless additional details are supplied.
 
-- `try` block
-- `catch` block
-- `finally` block
-- `ArithmeticException`
-- `ArrayIndexOutOfBoundsException`
-- `NumberFormatException`
-- Exception handling
+## Challenge — Return and Finally
 
-## Files
+Created a method that returns a value inside a `try` block and prints a message inside `finally`. The `finally` block executes before the method returns.
 
-- `Division.java` – handles division by zero.
-- `ArrayExample.java` – handles an invalid array index.
-- `ExceptionExample.java` – handles invalid number conversion and demonstrates `finally`.
+**File:** `FinallyDemo.java`
 
 ## Conclusion
 
-This lab helped me understand how Java programs can detect and handle errors without terminating unexpectedly.
+This lab demonstrates exception handling, custom checked exceptions, and the execution of `finally` during a return operation.
