@@ -42,48 +42,27 @@ public class Library {
         Member member = members.get(memberId);
         LibraryItem item = items.get(itemId);
 
-        if (member == null || item == null) {
-            throw new IllegalArgumentException(
-                "Member or item was not found."
-            );
+        if (member == null) {
+            throw new IllegalArgumentException("Member not found.");
+        }
+        if (item == null) {
+            throw new IllegalArgumentException("Item not found.");
         }
 
-        if (!item.isAvailable()) {
-            throw new ItemNotAvailableException(
-                "This item is already borrowed."
-            );
-        }
-
-        if (member.activeLoanCount() >= 3) {
-            throw new MemberLimitExceededException(
-                "A member cannot have more than 3 active loans."
-            );
-        }
-
-        Loan loan = new Loan(item, member);
-        item.setAvailable(false);
-        member.addLoan(loan);
-        loans.add(loan);
+        item.borrow(member);
+        loans.add(member.getLoans().get(
+            member.getLoans().size() - 1
+        ));
     }
 
     public void giveBack(String itemId) {
         LibraryItem item = items.get(itemId);
 
         if (item == null) {
-            throw new IllegalArgumentException("Item was not found.");
+            throw new IllegalArgumentException("Item not found.");
         }
 
-        Loan loan = loans.stream()
-            .filter(l -> l.getItem().getId().equals(itemId))
-            .filter(l -> !l.isReturned())
-            .findFirst()
-            .orElseThrow(() ->
-                new IllegalArgumentException("No active loan found.")
-            );
-
-        loan.markReturned();
-        loan.getMember().removeLoan(loan);
-        item.setAvailable(true);
+        item.giveBack();
     }
 
     public List<Loan> listOverdueItems() {
