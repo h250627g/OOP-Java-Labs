@@ -34,6 +34,14 @@ Created a `Vehicle` parent class, a `Car` subclass, and an `ElectricCar` subclas
 - `ElectricCar.java`
 - `VehicleDemo.java`
 
+  ### Challenge — Stack Using Composition
+
+Created a `Stack` class that contains an `ArrayList` instead of extending `ArrayList`.
+
+The stack provides `push()`, `pop()`, `peek()`, and `isEmpty()` methods.
+
+**Why composition is better:** If `Stack` extends `ArrayList`, it exposes list methods such as `add()`, `remove(index)`, and `clear()`. These methods allow users to manipulate elements in ways that violate the Last-In, First-Out (LIFO) principle. Composition hides these unwanted operations and provides better control over the stack.
+
 ## Conclusion
 
 This exercise demonstrates how a child class inherits data and behaviour from a parent class and can extend or override that behaviour.
