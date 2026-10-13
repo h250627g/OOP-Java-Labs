@@ -1,35 +1,21 @@
-# Lab 10: File I/O, Lambdas and Streams
 
-## Student Information
+# Lab 10: File I/O and Streams
 
-**Full Name:** Tanatswa Definite Muvezwa  
-**Registration Number:** H250627G  
-**Department:** Software Engineering 1.2
+## Basic Exercise: File Reading and Writing
+Created a program that accepts five lines from the user, saves them to a file named lines.txt, and reads the lines back for display.
 
-## Objective
+File: FileReadWriteDemo.java
 
-To understand file input and output, lambda expressions and streams in Java.
+## Intermediate Exercise: Streams and Class Average
+Created a program that calculates the class average and uses streams to select students scoring above the average. Their names are sorted alphabetically before printing.
 
-## Exercises Completed
+File: StudentStreamDemo.java
 
-1. File input and output
-2. Lambda expression
-3. Stream operations
+## Challenge Exercise: Grouping Learners
+Created a program that reads learners from learners.csv, groups them into grade bands A, B, and C using Collectors.groupingBy, and writes a separate report file for each band.
 
-## Concepts Demonstrated
+File: LearnerReportDemo.java
 
-- File I/O
-- Reading and writing files
-- Lambda expressions
-- Streams
-- Filtering and processing data
+Supporting input file: learners.csv
 
-## Files
-
-- `FileIOExample.java` – demonstrates file input and output.
-- `LambdaExample.java` – demonstrates a lambda expression.
-- `StreamExample.java` – demonstrates stream operations.
-
-## Conclusion
-
-This lab helped me understand how Java can work with files and how lambdas and streams can be used to process data efficiently.
+Output files: report_A.txt, report_B.txt, report_C.txt
