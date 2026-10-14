@@ -81,11 +81,11 @@ public class Library {
             .sorted(Comparator.comparing(LibraryItem::getTitle))
             .toList();
     }
-    public void restoreLoan(Loan loan) {
+   public void restoreLoan(Loan loan) {
     loans.add(loan);
-    loan.getMember().addLoan(loan);
 
     if (!loan.isReturned()) {
+        loan.getMember().addLoan(loan);
         loan.getItem().setAvailable(false);
     }
 }
