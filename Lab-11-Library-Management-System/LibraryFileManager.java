@@ -42,11 +42,15 @@ public class LibraryFileManager {
                 String[] data = line.split(",", 4);
                 if (data.length < 4) continue;
 
-                LibraryItem item;
-                if (data[0].equals("Book")) {
-                    item = new Book(data[1], data[2]);
-                } else {
-                    item = new Dvd(data[1], data[2]);
+               LibraryItem item;
+if (data[0].equals("Book")) {
+    item = new Book(data[1], data[2]);
+} else {
+    item = new Dvd(data[1], data[2]);
+}
+
+item.setAvailable(Boolean.parseBoolean(data[3]));
+library.addItem(item);
                 }
 
                 library.addItem(item);
