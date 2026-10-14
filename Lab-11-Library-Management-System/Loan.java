@@ -9,12 +9,18 @@ public class Loan {
     private LocalDate returnDate;
 
     public Loan(LibraryItem item, Member member) {
+        this(item, member, LocalDate.now(),
+            LocalDate.now().plusDays(item.loanPeriodDays()), null);
+    }
+
+    public Loan(LibraryItem item, Member member,
+                LocalDate borrowDate, LocalDate dueDate,
+                LocalDate returnDate) {
         this.item = item;
         this.member = member;
-        this.borrowDate = LocalDate.now();
-        this.dueDate = borrowDate.plusDays(
-            item.loanPeriodDays()
-        );
+        this.borrowDate = borrowDate;
+        this.dueDate = dueDate;
+        this.returnDate = returnDate;
     }
 
     public LibraryItem getItem() {
