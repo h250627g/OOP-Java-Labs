@@ -35,12 +35,15 @@ public class LibraryApp {
                     case "1" -> {
                         System.out.print("Enter item ID: ");
                         String id = input.nextLine();
+
                         System.out.print("Enter title: ");
                         String title = input.nextLine();
+
                         System.out.print("Book or DVD? ");
                         String type = input.nextLine();
 
                         LibraryItem item;
+
                         if (type.equalsIgnoreCase("book")) {
                             item = new Book(id, title);
                         } else if (type.equalsIgnoreCase("dvd")) {
@@ -53,29 +56,35 @@ public class LibraryApp {
                         library.addItem(item);
                         System.out.println("Item added.");
                     }
+
                     case "2" -> {
                         System.out.print("Enter member ID: ");
                         String id = input.nextLine();
+
                         System.out.print("Enter member name: ");
                         String name = input.nextLine();
 
                         library.registerMember(new Member(id, name));
                         System.out.println("Member registered.");
                     }
+
                     case "3" -> {
                         System.out.print("Enter member ID: ");
                         String memberId = input.nextLine();
+
                         System.out.print("Enter item ID: ");
                         String itemId = input.nextLine();
 
                         library.borrow(memberId, itemId);
                         System.out.println("Item borrowed successfully.");
                     }
+
                     case "4" -> {
                         System.out.print("Enter item ID: ");
                         library.giveBack(input.nextLine());
                         System.out.println("Item returned.");
                     }
+
                     case "5" -> {
                         var overdue = library.listOverdueItems();
 
@@ -85,6 +94,7 @@ public class LibraryApp {
                             overdue.forEach(System.out::println);
                         }
                     }
+
                     case "6" -> {
                         System.out.print("Enter title to search: ");
                         String title = input.nextLine();
@@ -97,6 +107,7 @@ public class LibraryApp {
                             results.forEach(System.out::println);
                         }
                     }
+
                     case "7" ->
                         library.getItems().values()
                             .forEach(System.out::println);
@@ -105,10 +116,10 @@ public class LibraryApp {
 
                     default -> System.out.println("Invalid option.");
                 }
-            } } catch (ItemNotAvailableException
-         | MemberLimitExceededException
-         | IllegalArgumentException
-         | IllegalStateException e)  {
+            } catch (ItemNotAvailableException
+                     | MemberLimitExceededException
+                     | IllegalArgumentException
+                     | IllegalStateException e) {
                 System.out.println("Error: " + e.getMessage());
             }
         }
