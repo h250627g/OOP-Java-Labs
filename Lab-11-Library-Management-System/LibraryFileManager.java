@@ -74,8 +74,25 @@ public class LibraryFileManager {
 
                 if (item == null || member == null) continue;
 
-                // Rebuild loan history in the next version of the loader.
-                // Current item availability is derived from the saved item state.
+                java.time.LocalDate borrowDate =
+    java.time.LocalDate.parse(data[2]);
+
+java.time.LocalDate dueDate =
+    java.time.LocalDate.parse(data[3]);
+
+java.time.LocalDate returnDate = data[4].isBlank()
+    ? null
+    : java.time.LocalDate.parse(data[4]);
+
+Loan loan = new Loan(
+    item,
+    member,
+    borrowDate,
+    dueDate,
+    returnDate
+);
+
+library.restoreLoan(loan);
             }
         }
     }
