@@ -105,9 +105,10 @@ public class LibraryApp {
 
                     default -> System.out.println("Invalid option.");
                 }
-            } catch (ItemNotAvailableException
-                     | MemberLimitExceededException
-                     | IllegalArgumentException e) {
+            } } catch (ItemNotAvailableException
+         | MemberLimitExceededException
+         | IllegalArgumentException
+         | IllegalStateException e)  {
                 System.out.println("Error: " + e.getMessage());
             }
         }
