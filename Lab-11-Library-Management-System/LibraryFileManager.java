@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.time.LocalDate;
 
 public class LibraryFileManager {
     private static final Path ITEMS_FILE = Path.of("items.csv");
@@ -39,20 +40,21 @@ public class LibraryFileManager {
     public static void load(Library library) throws IOException {
         if (Files.exists(ITEMS_FILE)) {
             for (String line : Files.readAllLines(ITEMS_FILE)) {
-                String[] data = line.split(",", 4);
-                if (data.length < 4) continue;
-
-               LibraryItem item;
-if (data[0].equals("Book")) {
-    item = new Book(data[1], data[2]);
-} else {
-    item = new Dvd(data[1], data[2]);
-}
-
-item.setAvailable(Boolean.parseBoolean(data[3]));
-library.addItem(item);
+                String[] data = line.split(",", -1);
+                if (data.length < 4) {
+                    continue;
                 }
 
+                LibraryItem item;
+                if (data[0].equals("Book")) {
+                    item = new Book(data[1], data[2]);
+                } else if (data[0].equals("Dvd")) {
+                    item = new Dvd(data[1], data[2]);
+                } else {
+                    continue;
+                }
+
+                item.setAvailable(Boolean.parseBoolean(data[3]));
                 library.addItem(item);
             }
         }
@@ -71,32 +73,29 @@ library.addItem(item);
         if (Files.exists(LOANS_FILE)) {
             for (String line : Files.readAllLines(LOANS_FILE)) {
                 String[] data = line.split(",", -1);
-                if (data.length < 5) continue;
+                if (data.length < 5) {
+                    continue;
+                }
 
                 LibraryItem item = library.getItems().get(data[1]);
                 Member member = library.getMembers().get(data[0]);
 
-                if (item == null || member == null) continue;
+                if (item == null || member == null) {
+                    continue;
+                }
 
-                java.time.LocalDate borrowDate =
-    java.time.LocalDate.parse(data[2]);
+                LocalDate borrowDate = LocalDate.parse(data[2]);
+                LocalDate dueDate = LocalDate.parse(data[3]);
 
-java.time.LocalDate dueDate =
-    java.time.LocalDate.parse(data[3]);
+                LocalDate returnDate = data[4].isBlank()
+                    ? null
+                    : LocalDate.parse(data[4]);
 
-java.time.LocalDate returnDate = data[4].isBlank()
-    ? null
-    : java.time.LocalDate.parse(data[4]);
+                Loan loan = new Loan(
+                    item, member, borrowDate, dueDate, returnDate
+                );
 
-Loan loan = new Loan(
-    item,
-    member,
-    borrowDate,
-    dueDate,
-    returnDate
-);
-
-library.restoreLoan(loan);
+                library.restoreLoan(loan);
             }
         }
     }
