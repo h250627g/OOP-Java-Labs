@@ -81,4 +81,12 @@ public class Library {
             .sorted(Comparator.comparing(LibraryItem::getTitle))
             .toList();
     }
+    public void restoreLoan(Loan loan) {
+    loans.add(loan);
+    loan.getMember().addLoan(loan);
+
+    if (!loan.isReturned()) {
+        loan.getItem().setAvailable(false);
+    }
+}
 }
